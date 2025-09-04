@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Based Drowsiness Detection Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { font-size: 1.2rem; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #34495e;
+    }
+    nav a {
+      color: #fff;
+      padding: 0.8rem 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { background: #1abc9c; }
+    section { padding: 2rem 5%; }
+    h2 {
+      color: #2c3e50;
+      border-left: 5px solid #1abc9c;
+      padding-left: 10px;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    ul, ol { margin: 0; padding-left: 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    table, th, td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: left;
+    }
+    th { background: #1abc9c; color: white; }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .portfolio-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      background: #1abc9c;
+      color: white;
+      text-decoration: none;
+    }
+    .portfolio-links a:hover { background: #16a085; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI-Based Drowsiness Detection System</h1>
+    <p>Multiparameter Driver Monitoring & IR Night Vision Support</p>
+  </header>
+
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#aim">Aim</a>
+    <a href="#objectives">Objectives</a>
+    <a href="#literature">Literature</a>
+    <a href="#methodology">Methodology</a>
+    <a href="#diagram">Block Diagram</a>
+    <a href="#components">Components</a>
+    <a href="#software">Software</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#outcomes">Outcomes</a>
+    <a href="#references">References</a>
+    <a href="#portfolio">Portfolio</a>
+  </nav>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <h2>Introduction</h2>
+    <div class="card">
+      <p>Road accidents are a leading cause of death worldwide, with driver drowsiness contributing to nearly 20–40% of cases. Existing solutions focus only on visual detection, which can fail in low-light conditions and may raise false alarms. Our system combines AI-based visual monitoring with physiological tracking (heart rate, SpO₂, body temperature) and IR-supported night vision to improve driver safety.</p>
+    </div>
+  </section>
+
+  <!-- AIM -->
+  <section id="aim">
+    <h2>Aim</h2>
+    <div class="card">
+      <p>To develop an AI-based drowsiness detection system enhanced with multiparameter driver monitoring and IR night vision support for improved road safety.</p>
+    </div>
+  </section>
+
+  <!-- OBJECTIVES -->
+  <section id="objectives">
+    <h2>Objectives</h2>
+    <div class="card">
+      <ul>
+        <li>Detect driver drowsiness using AI-based vision with IR support.</li>
+        <li>Monitor heart rate, SpO₂, body temperature.</li>
+        <li>Detect crash events using accelerometer (ADXL345).</li>
+        <li>Provide alerts via buzzer + mobile application.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LITERATURE -->
+  <section id="literature">
+    <h2>Literature Survey</h2>
+    <div class="card">
+      <ul>
+        <li>Albadawi et al., Review of Drowsiness Detection Systems, Sensors 2022.</li>
+        <li>Chang et al., PERCLOS & Physiological Signal Based Detection, Sensors 2022.</li>
+        <li>Lin & Tu, Nighttime Infrared Image Fatigue Detection, 2024.</li>
+        <li>Lalka et al., Camera-Based Driver Drowsiness Detector, IRJET 2021.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section id="methodology">
+    <h2>Methodology</h2>
+    <div class="card">
+      <ol>
+        <li><b>Data Acquisition:</b> IR camera + physiological sensors (MAX30102, MLX90614, MQ-3, ADXL345, ECG).</li>
+        <li><b>AI-based Visual Processing:</b> OpenCV / CNN for facial analysis (eye closure, yawning, head posture).</li>
+        <li><b>Physiological Signal Processing:</b> ECG-derived HRV, SpO₂, HR, body temp.</li>
+        <li><b>Multimodal Fusion:</b> Visual + physiological features for robust detection.</li>
+        <li><b>Alerts:</b> Local buzzer + Firebase mobile app notifications.</li>
+        <li><b>Crash Detection:</b> ADXL345 triggers emergency alerts.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- BLOCK DIAGRAM -->
+  <section id="diagram">
+    <h2>Preliminary Block Diagram</h2>
+    <div class="card">
+      <table>
+        <tr><th>Sensors</th><th>Functions</th></tr>
+        <tr><td>IR Camera</td><td>Eye Closure, Blink, Head Nodding, Yawning</td></tr>
+        <tr><td>MAX30102</td><td>Heart Rate & SpO₂</td></tr>
+        <tr><td>MLX90614</td><td>Body Temperature</td></tr>
+        <tr><td>ADXL345</td><td>Crash Detection</td></tr>
+        <tr><td>ECG Module</td><td>Heart Rate & Arrhythmia
