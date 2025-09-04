@@ -140,28 +140,61 @@
 
 
   <!-- METHODOLOGY -->
-  <section id="methodology">
-    <h2>Methodology</h2>
-    <div class="card">
-      <ol>
-        <li><b>Data Acquisition:</b> IR camera + physiological sensors (MAX30102, MLX90614, MQ-3, ADXL345, ECG).</li>
-        <li><b>AI-based Visual Processing:</b> OpenCV / CNN for facial analysis (eye closure, yawning, head posture).</li>
-        <li><b>Physiological Signal Processing:</b> ECG-derived HRV, SpO₂, HR, body temp.</li>
-        <li><b>Multimodal Fusion:</b> Visual + physiological features for robust detection.</li>
-        <li><b>Alerts:</b> Local buzzer + Firebase mobile app notifications.</li>
-        <li><b>Crash Detection:</b> ADXL345 triggers emergency alerts.</li>
-      </ol>
-    </div>
-  </section>
+<section id="methodology">
+  <h2>Methodology</h2>
+  <div class="card">
+    <h3>1. Data Acquisition</h3>
+    <ul>
+      <li>IR-enabled camera continuously monitors the driver’s face, effective in both daylight and low-light/night conditions.</li>
+      <li>Physiological parameters:</li>
+      <ul>
+        <li>MAX30102 → Heart Rate (HR), SpO₂</li>
+        <li>MLX90614 → Body temperature</li>
+        <li>MQ-3 → Alcohol detection</li>
+        <li>ADXL345 → Crash detection</li>
+        <li>Wearable single-lead ECG module → Continuous HR & HRV monitoring</li>
+      </ul>
+    </ul>
 
-  <!-- BLOCK DIAGRAM -->
-  <section id="diagram">
-    <h2>Preliminary Block Diagram</h2>
-    <div class="card">
-      <table>
-        <tr><th>Sensors</th><th>Functions</th></tr>
-        <tr><td>IR Camera</td><td>Eye Closure, Blink, Head Nodding, Yawning</td></tr>
-        <tr><td>MAX30102</td><td>Heart Rate & SpO₂</td></tr>
-        <tr><td>MLX90614</td><td>Body Temperature</td></tr>
-        <tr><td>ADXL345</td><td>Crash Detection</td></tr>
-        <tr><td>ECG Module</td><td>Heart Rate & Arrhythmia
+    <h3>2. AI-based Visual Processing</h3>
+    <ul>
+      <li>Computer vision algorithms (OpenCV / CNN) analyze facial features.</li>
+      <li>Drowsiness detection through eye closure (PERCLOS), yawning frequency, and head posture analysis.</li>
+      <li>IR support ensures night-time reliability.</li>
+    </ul>
+
+    <h3>3. Physiological Signal Processing</h3>
+    <ul>
+      <li>ECG-derived HRV, SpO₂, HR, and body temperature are processed as supportive evidence of drowsiness.</li>
+      <li>ECG also enables early alerts for cardiac irregularities.</li>
+    </ul>
+
+    <h3>4. Multimodal Fusion</h3>
+    <ul>
+      <li>Visual + physiological features are integrated.</li>
+      <li>Final decision made using rule-based thresholds or lightweight ML model to minimize false positives and improve robustness.</li>
+    </ul>
+
+    <h3>5. Alert and Communication System</h3>
+    <ul>
+      <li>Local alerts: buzzer for immediate driver feedback.</li>
+      <li>Mobile Application (Firebase cloud): displays vitals, drowsiness state, and sends real-time notifications.</li>
+    </ul>
+
+    <h3>6. Crash Detection</h3>
+    <ul>
+      <li>ADXL345 accelerometer identifies abnormal impacts.</li>
+      <li>Crash events trigger emergency alerts through the mobile app.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- BLOCK DIAGRAM -->
+<section id="diagram">
+  <h2>Block Diagram (Preliminary)</h2>
+  <div class="card" style="text-align:center;">
+    <img src="l3.png" alt="Preliminary Block Diagram" style="max-width:95%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+  </div>
+</section>
+
+  
